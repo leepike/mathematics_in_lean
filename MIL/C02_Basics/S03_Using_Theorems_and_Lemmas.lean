@@ -113,10 +113,10 @@ example : 2*a*b ≤ a^2 + b^2 := by
     _ ≤ 2*a*b + (a^2 - 2*a*b + b^2) := add_le_add (le_refl _) h
     _ = a^2 + b^2 := by ring
 
-example : 2*a*b ≤ a^2 + b^2 := by
-  have h : 0 ≤ a^2 - 2*a*b + b^2
+example : -(a*b)*2 ≤ a^2 + b^2 := by
+  have h : 0 ≤ a^2 + 2*a*b + b^2
   calc
-    a^2 - 2*a*b + b^2 = (a - b)^2 := by ring
+    a^2 + 2*a*b + b^2 = (a + b)^2 := by ring
     _ ≥ 0 := by apply pow_two_nonneg
   linarith
 
